@@ -2,4 +2,20 @@ header{
     height:80px;
     width:100%;
     display:flex;
+    justify-content: space-between;
+    max-width:1400px;
+    margin:auto;
+    h1{
+        img{
+            height:100%;
+        }
+    }
+    nav ul{
+        display:flex;
+        justify-content: space-between;
+        gap:96px;
+        max-width:900px;
+        align-items: center;
+        height:100%;
+    }
 }

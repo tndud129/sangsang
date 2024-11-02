@@ -1,6 +1,5 @@
-@import url(../css/reset.css);
 body {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 body header {
   height: 10em;

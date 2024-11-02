@@ -1,7 +1,7 @@
-@import url(../css/reset.css);
-body {
+html {
   font-size: 10px;
 }
+
 body header {
   height: 10em;
 }

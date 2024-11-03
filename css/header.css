@@ -2,11 +2,15 @@ html {
   font-size: 10px;
 }
 
+body {
+  font-family: "NotoSansKR-Regular";
+}
 body header {
   height: 10em;
 }
 body header .h_inner {
   border: 1px solid red;
+  position: relative;
   height: 100%;
 }
 body header .h_inner .h_logo {
@@ -20,36 +24,68 @@ body header .h_inner .h_logo a {
   height: 100%;
   border: 1px solid red;
 }
+body header .h_inner .nav_bg {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 23rem;
+  position: absolute;
+  left: 0;
+  top: 10rem;
+  display: none;
+  z-index: 1;
+}
 body header .h_inner nav {
   width: 60%;
   height: 100%;
   margin: 0 auto;
-  border: 1px solid greenyellow;
+  position: relative;
 }
 body header .h_inner nav ul {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
 }
 body header .h_inner nav ul li {
   width: 20%;
+  position: relative;
 }
 body header .h_inner nav ul li a {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 2.2rem;
   width: 100%;
   height: 100%;
-  line-height: 3;
+  line-height: 8.5rem;
   font-weight: 500;
   text-align: center;
+}
+body header .h_inner nav ul li a:hover {
+  color: #00BFB6;
+}
+body header .h_inner nav ul li .depth {
+  width: 100%;
+  height: 15rem;
+  border-top: 1px solid #d1d1d1;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
+body header .h_inner nav ul li .depth ul {
+  height: 100%;
+  border: 1px solid red;
 }
 body header .h_inner nav ul li .depth ul li {
   width: 100%;
 }
 body header .h_inner nav ul li .depth ul li a {
   display: block;
-  font-size: 1.6em;
+  font-size: 2em;
   width: 100%;
+  height: 7rem;
+  line-height: 7rem;
+}
+body header .h_inner nav ul li .depth ul li a:hover {
+  color: #0F908A;
 }
 body header .h_inner .menu_lang {
   position: absolute;
@@ -59,10 +95,166 @@ body header .h_inner .menu_lang {
   height: 100%;
   border: 1px solid black;
 }
-body header .h_inner .menu_lang .lang span {
-  display: block;
-  font-size: 1rem;
+body header .h_inner .menu_lang .langWrap {
+  width: 10rem;
+  padding: 2rem 0;
+  border: 1px solid rebeccapurple;
 }
-body header .h_inner .menu_lang .h_menu {
+body header .h_inner .menu_lang .langWrap ul {
+  height: auto;
+}
+body header .h_inner .menu_lang .langWrap ul li {
+  position: relative;
+}
+body header .h_inner .menu_lang .langWrap ul li:first-child::after {
+  content: "";
+  background: url(../images/downarrow.svg) no-repeat center;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+body header .h_inner .menu_lang .langWrap ul li a {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Pretendard-Regular";
+  width: 100%;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+body header .h_inner .menu_lang .langWrap ul li .hide {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  text-align: center;
+  border: 1px solid #333;
+  border-radius: 25px;
+  width: 100%;
+  height: 5rem;
+  line-height: 1.5;
+}
+body header .h_inner .menu_lang .h_menu a {
   width: 2.6rem;
+  height: 2.6rem;
+  background: url(../images/menu.svg) no-repeat;
+  display: block;
+  margin: 2.8rem auto;
+  border: 1px solid red;
+}
+body header .h_nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: #0F908A;
+  width: 100%;
+  height: 100%;
+}
+body header .h_nav h1 a {
+  display: block;
+  width: 14rem;
+  height: 100%;
+  margin: 2rem 0 0 5rem;
+}
+body header .h_nav .close {
+  background: url(../images/closebtn_w.svg) no-repeat;
+  width: 5rem;
+  height: 5rem;
+  display: block;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+body header .h_nav .close:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+body header .h_nav .h_navInner nav {
+  width: 100%;
+  margin: 20rem auto;
+}
+body header .h_nav .h_navInner nav ul {
+  width: 100%;
+  gap: 4rem;
+}
+body header .h_nav .h_navInner nav ul li {
+  width: 20%;
+}
+body header .h_nav .h_navInner nav ul li a {
+  display: block;
+  font-size: 3.8rem;
+  height: 7rem;
+  line-height: 7rem;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+body header .h_nav .h_navInner nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  display: block;
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: -webkit-transform 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+  transition: transform 0.4s cubic-bezier(1, 0, 0, 1), -webkit-transform 0.4s cubic-bezier(1, 0, 0, 1);
+}
+body header .h_nav .h_navInner nav ul li a:hover::before {
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+body header .h_nav .h_navInner nav ul li .h_navDepth ul li {
+  width: 100%;
+}
+body header .h_nav .h_navInner nav ul li .h_navDepth ul li a {
+  display: block;
+  font-size: 1.8rem;
+}
+body header .h_nav .sns {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 10rem;
+}
+body header .h_nav .sns ul {
+  gap: 2rem;
+}
+body header .h_nav .sns ul li {
+  width: 6rem;
+  height: 6rem;
+}
+body header .h_nav .sns ul li a {
+  display: inline-block;
+  width: 6rem;
+  height: 6rem;
+}
+body header .h_nav .sns ul li .youtube {
+  background: url(../images/youtube.svg) no-repeat center;
+  background-size: 100%;
+}
+body header .h_nav .sns ul li .insta {
+  background: url(../images/instagram.svg) no-repeat center;
+  background-size: 100%;
+}
+body header .h_nav .sns ul li .twitter {
+  background: url(../images/twitter.svg) no-repeat center;
+  background-size: 100%;
 }/*# sourceMappingURL=header.css.map */

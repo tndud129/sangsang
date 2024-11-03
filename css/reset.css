@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+.blind{position: absolute; left: -9999px; font-size: 0;}
 .center{max-width: 1400px; position: relative; margin: 0 auto;}
 
 .flex-01{display: flex; justify-content: space-between;}
@@ -61,4 +61,30 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+	src: url(fonts/Pretendard-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Bold';
+	src: url(fonts/Pretendard-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "NotoSansKR-Regular";
+    font-weight: normal;
+    font-style: normal;
+    src: url(fonts/NotoSansKR-Regular.ttf);
+}
+@font-face {
+    font-family: "NotoSansKR-Light";
+    font-weight: light;
+    font-style: normal;
+    src: url(fonts/NotoSansKR-Light.ttf);
 }

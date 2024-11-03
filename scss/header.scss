@@ -1,55 +1,155 @@
-// @import url(../css/reset.css);
-html{font-size: 10px}
+html{font-size: 10px;}
 body{
+    $color1:#fff;
+    $color2:#999;
+    $color3:#0F908A;
+    $color4:#00BFB6;
+    $color5:#273646;
+    font-family: "NotoSansKR-Regular";
     header{
         height: 10em;
-        .h_inner{border: 1px solid red;
-            height: 100%;
+        .h_inner{border: 1px solid red; position: relative; height: 100%;
             .h_logo{
                 width: 15em; position: absolute; padding: 1em 0;
                 a{display: block; width: 100%; height: 100%; border: 1px solid red;}
             }
+            .nav_bg{width: 100%; background-color: rgba($color: #fff, $alpha: 0.6); height: 23rem; position: absolute;
+            left: 0; top: 10rem; display: none; z-index: 1;}
         
             nav{
-                width: 60%;
-                height: 100%;
-                margin: 0 auto;
-                border: 1px solid greenyellow;
+                width: 60%; height: 100%; margin: 0 auto; position: relative;
                 ul{
                     width: 100%;
                     height: 100%;
-                    border: 1px solid black;
                     li{
-                        width: calc(100% / 5);
+                        width: calc(100% / 5); position: relative;
                         a{
-                            display: inline-block; font-size: 2rem; 
-                            width: 100%;
-                            height: 100%; line-height: 3;
-                            font-weight: 500; text-align: center;}
+                            display: inline-block; font-size: 2.2rem; 
+                            width: 100%; height: 100%; line-height: 8.5rem;
+                            font-weight: 500; text-align: center;
+                        &:hover{
+                            color: $color4;
+                        }
+                        }
                         .depth{
-                            ul{
+                            width: 100%; height: 15rem;
+                            border-top: 1px solid #d1d1d1;
+                            display: none; position: absolute;
+                            top: 100%; left: 0;
+                            z-index: 10;
+                            ul{height: 100%; border: 1px solid red;
                                 li{
                                     width: 100%;
-                                    a{display: block; font-size: 1.6em; width: 100%;}
+                                    a{display: block; font-size: 2em; width: 100%; height: 7rem; line-height: 7rem;
+                                    &:hover{color:$color3}}
                                 }
                             }
                         }
                     }
                 }
             }
-
             .menu_lang{
                 position: absolute; right: 0; top: 0;
                 width: 15rem; height: 100%;
                 border: 1px solid black;
-                .lang{
-                    span{display: block; font-size: 1rem;}
+                .langWrap{
+                    width: 10rem; padding: 2rem 0; border: 1px solid rebeccapurple;
+                    ul{
+                        height: auto;
+                        li{position: relative;
+                            &:first-child::after{
+                                content: ""; background: url(../images/downarrow.svg) no-repeat center;
+                                width: 2rem; height: 2rem; position: absolute; right: 1rem; top: 1rem;
+                            }
+                            a{display: block; font-size: 2rem; font-weight: 500;
+                                font-family: 'Pretendard-Regular';
+                                width: 100%; padding: 1rem 2rem; text-align: left;
+                            }
+                            .hide{display: none; position: absolute; top: 0.5rem; left: 0;
+                                text-align: center;
+                                border: 1px solid #333; border-radius: 25px; width: 100%; height: 5rem; line-height: 1.5; }
+                        }
+                    }
                 }
                 .h_menu{
-                    width: 2.6rem;
+                    a{
+                            width: 2.6rem; height: 2.6rem;
+                            background: url(../images/menu.svg) no-repeat;
+                            display: block; margin: 2.8rem auto; border: 1px solid red;
+                        }
+                    }
+                }
+            }
+        .h_nav{
+            position: absolute; left: 0; top: 0;
+            z-index: 100; background-color: $color3;
+            width: 100%; height: 100%;
+            h1{
+                a{
+                    display: block; width: 14rem; height: 100%;
+                    margin: 2rem 0 0 5rem;
+                }
+            }
+            .close{background: url(../images/closebtn_w.svg) no-repeat; width: 5rem; height: 5rem;
+                display: block;  position: absolute; right: 3rem; top: 3rem;
+                transition: all 0.6s ease;
+
+                &:hover{transform: rotate(180deg);}
+            }
+            .h_navInner{
+                nav{width: 100%; margin: 20rem auto;
+                    ul{width: 100%; gap: 4rem;
+                        li{
+                            width: calc(100% / 5);
+                            a{display: block; font-size: 3.8rem; height: 7rem; line-height: 7rem;
+                                color: $color1; text-align: center; position: relative;
+                                &::before{
+                                    content: ""; position: absolute; bottom: 0; left: 0;
+                                    width: 100%; height: 1px; background-color: $color1;
+                                    display: block;
+                                    -webkit-transform-origin: right top;
+                                    -ms-transform-origin: right top;
+                                    transform-origin: right top;
+                                    -webkit-transform: scale(0, 1);
+                                    -ms-transform: scale(0, 1);
+                                    transform: scale(0, 1);
+                                    -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+                                    transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+                                }
+                                &:hover::before {
+                                    -webkit-transform-origin: left top;
+                                    -ms-transform-origin: left top;
+                                    transform-origin: left top;
+                                    -webkit-transform: scale(1, 1);
+                                    -ms-transform: scale(1, 1);
+                                    transform: scale(1, 1)
+                                }
+                            }
+                            .h_navDepth{
+                                ul{
+                                    li{width: 100%;
+                                        a{display: block; font-size: 1.8rem;}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .sns{position: absolute; left: 50%; bottom: 10%; transform: translateX(-50%);
+                margin-top: 10rem;
+                ul{
+                    gap: 2rem;
+                    li{width: 6rem; height: 6rem;
+                        a{display: inline-block; width: 6rem; height: 6rem;}
+                        .youtube{background: url(../images/youtube.svg) no-repeat center; background-size: 100%;}
+                        .insta{background: url(../images/instagram.svg) no-repeat center; background-size: 100%;}
+                        .twitter{background: url(../images/twitter.svg) no-repeat center; background-size: 100%;}
+                    }
                 }
             }
         }
+        }
 
     }
-}
+

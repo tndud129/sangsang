@@ -8,7 +8,7 @@ body {
 body .nav_bg {
   width: 100%;
   background-color: red;
-  height: 23rem;
+  height: 30rem;
   position: absolute;
   left: 0;
   top: 10rem;
@@ -64,8 +64,8 @@ body header .h_inner nav ul li .depth {
   width: 100%;
   height: 15rem;
   border-top: 1px solid #d1d1d1;
-  display: none;
   position: absolute;
+  display: none;
   top: 100%;
   left: 0;
   z-index: 10;

@@ -16,43 +16,48 @@ window.addEventListener('wheel', (e)=>{
 
 
 
-const navUl = document.querySelector('.h_navInner nav ul');
+
+
+
+const navUl = document.querySelector('.h_inner nav ul');
 const depthItems = document.querySelectorAll('.depth');
 const navBg = document.querySelector('.nav_bg');
 
 navUl.addEventListener('mouseenter', () => {
+    navBg.style.display = 'block';
+    navBg.style.height = '0';
+    navBg.style.overflow = 'hidden';
+    navBg.style.transition = 'height 0.5s ease';
+
+    requestAnimationFrame(() => {
+        navBg.style.height = '30rem';
+    });
+
     depthItems.forEach(depth => {
         depth.style.display = 'block';
         depth.style.height = '0';
         depth.style.overflow = 'hidden';
         depth.style.transition = 'height 0.5s ease';
         requestAnimationFrame(() => {
-            depth.style.height = '15rem'; 
+            depth.style.height = '30rem'; 
         });
-    });
-
-    navBg.style.display = 'block';
-    navBg.style.height = '0';
-    navBg.style.overflow = 'hidden';
-    navBg.style.transition = 'height 0.5s ease';
-    requestAnimationFrame(() => {
-        navBg.style.height = '23rem'; 
     });
 });
 
 navUl.addEventListener('mouseleave', () => {
+    navBg.style.height = '0';
+    navBg.addEventListener('transitionend', () => {
+        navBg.style.display = 'none';
+    }, { once: true });
+
     depthItems.forEach(depth => {
         depth.style.height = '0';
         depth.addEventListener('transitionend', () => {
             depth.style.display = 'none';
         }, { once: true });
     });
-
-    navBg.style.height = '0';
-    navBg.addEventListener('transitionend', () => {
-        navBg.style.display = 'none';
-    }, { once: true });
 });
+
 
 
 

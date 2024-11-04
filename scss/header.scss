@@ -6,7 +6,7 @@ body{
     $color4:#00BFB6;
     $color5:#273646;
     font-family: "NotoSansKR-Regular";
-    .nav_bg{width: 100%; background-color: red; height: 23rem; position: absolute;
+    .nav_bg{width: 100%; background-color: red; height: 30rem; position: absolute;
     left: 0; top: 10rem; z-index: 1; display: none;}
     header{
         height: 10em;
@@ -34,7 +34,7 @@ body{
                         .depth{
                             width: 100%; height: 15rem;
                             border-top: 1px solid #d1d1d1;
-                            display: none; position: absolute;
+                            position: absolute; display: none;
                             top: 100%; left: 0;
                             z-index: 10;
                             ul{height: 100%; border: 1px solid red;

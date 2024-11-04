@@ -11,56 +11,52 @@ window.addEventListener('wheel', (e)=>{
     }
 
 
-})
+});
 
-const nav = document.querySelector('nav');
-const depthItems = document.querySelectorAll('.depth'); 
+
+
+
+const navUl = document.querySelector('.h_navInner nav ul');
+const depthItems = document.querySelectorAll('.depth');
 const navBg = document.querySelector('.nav_bg');
 
-nav.addEventListener('mouseenter', () => {
-    // depth 요소 처리
+navUl.addEventListener('mouseenter', () => {
     depthItems.forEach(depth => {
         depth.style.display = 'block';
         depth.style.height = '0';
         depth.style.overflow = 'hidden';
-        depth.style.transition = 'height 0.3s ease';
-
-        setTimeout(() => {
-            depth.style.height = depth.scrollHeight + 'px';
-        }, 10);
+        depth.style.transition = 'height 0.5s ease';
+        requestAnimationFrame(() => {
+            depth.style.height = '15rem'; 
+        });
     });
 
-    // nav_bg 처리
     navBg.style.display = 'block';
     navBg.style.height = '0';
     navBg.style.overflow = 'hidden';
-    navBg.style.transition = 'height 0.3s ease';
-
-    // nav_bg의 높이를 명시적으로 설정
-    setTimeout(() => {
-        navBg.style.height = '23rem'; // 원하는 고정 높이로 설정
-    }, 10);
+    navBg.style.transition = 'height 0.5s ease';
+    requestAnimationFrame(() => {
+        navBg.style.height = '23rem'; 
+    });
 });
 
-nav.addEventListener('mouseleave', () => {
-    // depth 요소 처리
+navUl.addEventListener('mouseleave', () => {
     depthItems.forEach(depth => {
         depth.style.height = '0';
-        depth.style.overflow = 'hidden';
-
-        setTimeout(() => {
+        depth.addEventListener('transitionend', () => {
             depth.style.display = 'none';
-        }, 300);
+        }, { once: true });
     });
 
-    // nav_bg 처리
     navBg.style.height = '0';
-    navBg.style.overflow = 'hidden';
-
-    setTimeout(() => {
+    navBg.addEventListener('transitionend', () => {
         navBg.style.display = 'none';
-    }, 300);
+    }, { once: true });
 });
+
+
+
+
 
 const langWrap = document.querySelector('.langWrap ul li:first-child');
 const hide = document.querySelector('.hide');

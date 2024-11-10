@@ -1,5 +1,177 @@
 @import './header';
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1300px;
+
+@mixin desktop{
+    @media (max-width: $desktop) {
+        @content;
+    }
+}
+@mixin tablet{
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+@mixin mobile{
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
 body{
     background-color: #fff;
     font-size: 10px;
+    $color1:#fff;
+    $color2:#999;
+    $color3:#0F908A;
+    $color4:#00BFB6;
+    $color5:#273646;
+    font-family: "NotoSansKR-Regular";
+
+    .main{height: 63rem; border: 1px solid red;
+        z-index: 1; margin: 0 5rem; position: relative;
+        @include desktop{
+            margin: 0 1rem;
+        }
+        .mainSns{
+            position: absolute; right: 0; top: 6rem; z-index: 100;
+            @include tablet {
+                top: 2rem;
+            }
+            ul{
+                li{
+                    &:first-child a{background: url(../images/instagram.svg) no-repeat center; background-size: 100%;}
+                    &:nth-child(2) a{background: url(../images/youtube.svg) no-repeat center; background-size: 100%; margin: 2rem 0;}
+                    &:last-child a{background: url(../images/twitter.svg) no-repeat center; background-size: 100%;}
+                    a{display: block; width: 5rem; height: 5rem;
+                        @include tablet {
+                            width: 4rem; height: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+        .mainInner{height: 100%; border: 1px solid skyblue;
+            .mainBg{position: absolute; bottom: 0; width: 100%; height: 40rem;
+                border-radius: 200px; border: 1px solid red; overflow: hidden;
+                @include desktop {
+                    height: 35rem;
+                }
+                @include mobile {
+                    height: 25rem;
+                }
+                img{object-position: center; object-fit: cover; height: 100%; width: 100%;}
+            }
+            .mainText{position: absolute; left: 10rem; top: 13rem;
+                font-family: 'Pretendard-Regular';
+                font-size: 8rem; font-weight: 700; z-index: 10;
+                .char {
+                    display: inline-block;
+                }
+                @include desktop{
+                    font-size: 7rem; top: 16rem; text-align: center;
+                    left: 50%; top: 20rem; transform: translateX(-50%); width: 100%;
+                }
+                @include tablet {
+                    font-size: 7vw; top: 23rem;
+                }
+                @include mobile {
+                    font-size: 8.4vw; top: 33.5rem;
+                }
+                .first{margin-bottom: 3rem;
+                @include desktop{
+                    margin-bottom: 1.5rem;
+                }
+                }
+                .second{color: $color1;}
+                h3{
+                    font-size: 4rem; color: $color1; margin-top: 4rem;
+                    font-family: "NotoSansKR-Regular";
+                    @include desktop {
+                        font-size: 3.6rem;
+                    }
+                    @include tablet {
+                        font-size: 2.6rem;
+                    }
+                    @include mobile {
+                        font-size: 5vw; margin-top: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .business{margin-top: 10rem;
+        @include desktop{
+            padding: 0 1rem;
+        }
+        .businessInner{
+            .businessText{
+                h1{font-size: 5rem; font-family: 'Pretendard-Bold';
+                margin-bottom: 1rem;
+                }
+                p{font-size: 2rem; font-weight: 300; color: #666;
+                    height: 3.5rem; line-height: 3.5rem;
+                    border: 1px solid red; position: relative;
+                    &::after{
+                        content: ""; background: url(../images/next_666.svg) no-repeat;
+                        position: absolute; top: 0; left: 20rem;
+                        width: 3rem; height: 3rem; display: inline-block; border: 1px solid red;
+                    }}
+            }
+            .businessImgbox{
+                margin-top: 5rem; gap: 1rem; flex-wrap: wrap;
+                .busiImg1{background: url(../images/busi1.jpg) no-repeat center; background-size: cover;}
+                .busiImg2{background: url(../images/busi2.jpg) no-repeat center;}
+                .busiImg3{background: url(../images/busi3.jpg) no-repeat center; background-size: cover;}
+                .busiBox{
+                    width: calc(100% / 3 - 1rem); height: 44.4rem;
+                    border-radius: 130px; border: 1px solid red;
+                    @include desktop{
+                        width: 100%;
+                    }
+                    a{position: relative; overflow: hidden;
+                        display: inline-block; width: 100%; height: 100%;
+                        text-align: center; padding: 18rem 0;
+                        &::before{
+                            content: ""; position: absolute;
+                            top: 0; left: 0; width: 100%; height: 100%;
+                            background-color: rgba(0,0,0,0.1); border-radius: 130px;
+                            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+                        &:hover::before{
+                            background-color: rgba(0,0,0,0.4);
+                        }
+                        h6{font-size: 3.2rem; font-weight: 600; margin-bottom: 3rem; color: rgba(255,255,255,0.9);
+                        position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);}
+                        p{font-size: 2rem; font-weight: 300; color: rgba(255,255,255,0.3);   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                        position: absolute; bottom: -10rem; left: 50%; transform: translateX(-50%); width: 100%;}
+                        &:hover h6{color: $color1; bottom: 50%;}
+                        &:hover p{color: $color1; bottom: 40%;}
+                    }
+                }
+            }
+        }
+    }
+
+    .News{
+        background-color: $color3; padding: 3rem 6rem;
+        width: 100%; height: 67.6rem; margin-top: 10rem;
+        .NewInner{
+            width: 100%; height: 100%; border: 1px solid red;
+            .NewBox1{
+                border: 1px solid pink; width: 20%;
+                h4{font-size: 3.2rem; font-weight: 400; color: $color1;}
+                h1{font-size: 4.2rem; font-weight: 700; color: $color1;}
+                .Viewmore{display: inline-block;
+                    a{display: inline-block; color: $color1; font-size: 1.4rem;
+                        &::after{content: ""; display: inline-block; width: 3rem; height: 3rem;
+                            background: url(../images/next2.svg) no-repeat center;}
+                        }
+                }
+            }
+        }
+    }
 }

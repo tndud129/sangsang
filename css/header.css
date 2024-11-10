@@ -7,16 +7,23 @@ body {
 }
 body .nav_bg {
   width: 100%;
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.9);
   height: 30rem;
   position: absolute;
   left: 0;
   top: 10rem;
-  z-index: 1;
+  z-index: 100;
   display: none;
 }
 body header {
   height: 10em;
+  z-index: 1000;
+  padding: 0 5rem;
+}
+@media (max-width: 1300px) {
+  body header {
+    padding: 0 1rem;
+  }
 }
 body header .h_inner {
   border: 1px solid red;
@@ -39,6 +46,11 @@ body header .h_inner nav {
   height: 100%;
   margin: 0 auto;
   position: relative;
+}
+@media (max-width: 1300px) {
+  body header .h_inner nav {
+    display: none;
+  }
 }
 body header .h_inner nav ul {
   width: 100%;
@@ -68,7 +80,7 @@ body header .h_inner nav ul li .depth {
   display: none;
   top: 100%;
   left: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 body header .h_inner nav ul li .depth ul {
   height: 100%;
@@ -85,7 +97,8 @@ body header .h_inner nav ul li .depth ul li a {
   line-height: 7rem;
 }
 body header .h_inner nav ul li .depth ul li a:hover {
-  color: #0F908A;
+  color: #333;
+  background-color: rgba(209, 209, 209, 0.5);
 }
 body header .h_inner .menu_lang {
   position: absolute;
@@ -157,6 +170,25 @@ body header .h_inner .menu_lang .h_menu a {
   margin: 2.8rem auto;
   border: 1px solid red;
 }
+body header .h_inner .menu_lang .m_menu {
+  position: relative;
+}
+body header .h_inner .menu_lang .m_menu a {
+  width: 2.6rem;
+  height: 2.6rem;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  background: url(../images/menu.svg) no-repeat;
+  display: none;
+  margin: 2.8rem auto;
+  border: 1px solid red;
+}
+@media (max-width: 1300px) {
+  body header .h_inner .menu_lang .m_menu a {
+    display: block;
+  }
+}
 body header .h_nav {
   position: absolute;
   left: 0;
@@ -165,6 +197,16 @@ body header .h_nav {
   background-color: #0F908A;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  -webkit-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+}
+@media (max-width: 1300px) {
+  body header .h_nav {
+    display: none;
+  }
 }
 body header .h_nav h1 a {
   display: block;
@@ -270,4 +312,99 @@ body header .h_nav .sns ul li .insta {
 body header .h_nav .sns ul li .twitter {
   background: url(../images/twitter.svg) no-repeat center;
   background-size: 100%;
+}
+body header .m_nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+}
+body header .m_nav .fade-in {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+body header .m_nav .fade-out {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+body header .m_nav .m_closeBtn {
+  background: url(../images/m_close.svg) no-repeat center;
+  border: none;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 4rem;
+  height: 4rem;
+}
+body header .m_nav .m_closeBtn:hover {
+  background: url(../images/m_close-hover.svg) no-repeat;
+}
+body header .m_nav .m_navInner {
+  padding: 2rem;
+}
+body header .m_nav .m_navInner ul {
+  margin: 20rem 0;
+}
+body header .m_nav .m_navInner ul li a {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  padding: 0 5rem;
+  height: 10rem;
+  line-height: 10rem;
+  width: 100%;
+}
+body header .m_nav .m_navInner ul li a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #0F908A;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+body header .m_nav .m_navInner ul li a .active::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+body header .m_nav .m_navInner ul li .m_navDepth {
+  display: none; /* overflow: hidden; */
+}
+body header .m_nav .m_navInner ul li .m_navDepth ul {
+  margin: 0;
+}
+body header .m_nav .m_navInner ul li .m_navDepth ul li a {
+  display: block;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+}
+body header .m_nav .m_navInner ul li .m_navDepth ul li a::after {
+  content: "";
+  display: none;
+}
+body header .m_nav .m_navInner ul li .m_navDepth ul li a:hover {
+  color: #0F908A;
+  font-weight: 700;
 }/*# sourceMappingURL=header.css.map */

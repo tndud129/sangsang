@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        // 함수를 이용한 매개변수
+
+        const Plus = (a,b) => {
+
+            console.log(a + b);
+
+        }
+
+        Plus(10 , 4);
+
+        const Myfunc = (clear) => {
+
+            // const div = document.createElement('div');
+            // console.log(div);
+            // div.innerText = clear;
+            // document.body.appendChild(div);
+            // appendChild = 나타나게 해주는 것. 보이는 것.
+
+            const div = document.createElement('div');
+
+            for(let i = 0; i < clear.length; i++){
+
+                const span = document.createElement('span');
+
+                span.innerText = clear[i];
+
+                div.appendChild(span);
+            }
+            
+            document.body.appendChild(div);
+
+        }
+        Myfunc('suyeong');
+        Myfunc('play');
+
+
+
+
+
+
+    </script>
+</body>
+</html>

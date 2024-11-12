@@ -15,49 +15,41 @@ window.addEventListener('wheel', (e)=>{
 
 
 
+const mainMenu = document.querySelector('.h_inner > nav > ul');
+const menuBg = document.querySelector('.nav_bg');
+const subMenus = document.querySelectorAll('.depth');
 
-
-
-
-const navUl = document.querySelector('.h_inner nav ul');
-const depthItems = document.querySelectorAll('.depth');
-const navBg = document.querySelector('.nav_bg');
-
-navUl.addEventListener('mouseenter', () => {
-    navBg.style.display = 'block';
-    navBg.style.height = '0';
-    navBg.style.overflow = 'hidden';
-    navBg.style.transition = 'height 0.5s ease';
-
-    navBg.offsetHeight;
-
-    navBg.style.height = '30rem';
-
-    depthItems.forEach(depth => {
-        depth.style.display = 'block';
-        depth.style.height = '0';
-        depth.style.overflow = 'hidden';
-        depth.style.transition = 'height 0.5s ease';
-
-        depth.offsetHeight; 
-
-        depth.style.height = '30rem';
+mainMenu.addEventListener('mouseenter', () => {
+    menuBg.style.display = 'block';
+    subMenus.forEach(menu => {
+        menu.style.display = 'block';
     });
+
+    setTimeout(() => {
+        menuBg.style.height = '30rem';
+        subMenus.forEach(menu => {
+            menu.style.height = '30rem';
+        });
+    }, 0);
 });
 
-navUl.addEventListener('mouseleave', () => {
-    navBg.style.height = '0';
-    navBg.addEventListener('transitionend', () => {
-        navBg.style.display = 'none';
-    }, { once: true });
-
-    depthItems.forEach(depth => {
-        depth.style.height = '0';
-        depth.addEventListener('transitionend', () => {
-            depth.style.display = 'none';
-        }, { once: true });
+mainMenu.addEventListener('mouseleave', () => {
+    menuBg.style.height = '0';
+    subMenus.forEach(menu => {
+        menu.style.height = '0';
     });
+
+    setTimeout(() => {
+        menuBg.style.display = 'none';
+        subMenus.forEach(menu => {
+            menu.style.display = 'none';
+        });
+    }, 300);
 });
+
+
+
+
 
 
 
@@ -90,9 +82,9 @@ const closeBtn = document.querySelector('.close');
 const hNav = document.querySelector('.h_nav');
 const menuIcon = document.querySelector('.h_menu a'); 
 
-// hNav.style.opacity = '0';
-// hNav.style.visibility = 'hidden';
-// hNav.style.transition = 'opacity 0.6s ease';
+hNav.style.opacity = '0';
+hNav.style.visibility = 'hidden';
+hNav.style.transition = 'opacity 0.6s ease';
 
 function toggleScroll(isOpen) {
     if (isOpen) {

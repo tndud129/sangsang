@@ -18,13 +18,14 @@ window.addEventListener('wheel', (e)=>{
 const mainMenu = document.querySelector('.h_inner > nav > ul');
 const menuBg = document.querySelector('.nav_bg');
 const subMenus = document.querySelectorAll('.depth');
-
+let isEnter = true;
 mainMenu.addEventListener('mouseenter', () => {
+    isEnter =true;
     menuBg.style.display = 'block';
     subMenus.forEach(menu => {
         menu.style.display = 'block';
     });
-
+    
     setTimeout(() => {
         menuBg.style.height = '30rem';
         subMenus.forEach(menu => {
@@ -34,16 +35,21 @@ mainMenu.addEventListener('mouseenter', () => {
 });
 
 mainMenu.addEventListener('mouseleave', () => {
+    isEnter =false;
     menuBg.style.height = '0';
     subMenus.forEach(menu => {
         menu.style.height = '0';
     });
 
     setTimeout(() => {
-        menuBg.style.display = 'none';
-        subMenus.forEach(menu => {
-            menu.style.display = 'none';
-        });
+        if(!isEnter){
+
+            menuBg.style.display = 'none';
+            subMenus.forEach(menu => {
+                menu.style.display = 'none';
+            });
+            }
+
     }, 300);
 });
 

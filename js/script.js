@@ -243,7 +243,40 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: false });
 });
 
-
-const Number = (Up) => {
-    
+// 이징함수 불러오기 맘에 안드시면 다른거 찾아보시는거두....ㅎ
+const easeOutQuart = (x) =>{
+    return 1 - Math.pow(1 - x, 4);
 }
+        //왼쪽부터 카운트 목표 숫자, 바뀔 타겟, 지속시간(기본 2초)
+const number = (targetNum, target, duration= 2000) => {
+
+        //지금 시간으로 시작
+        const startTime = performance.now();
+        const startValue = 0;  //0부터
+                //currentTime 은 performance.now() 랑 동일한 시간 체계 지난 시간 가져오기
+        const update = (currentTime) =>{
+            const time = currentTime - startTime;
+            //지난 시간들 정도
+            const progress = Math.min(time / duration, 1);
+
+            // 이징함수 불러오기
+            const easedProgress = easeOutQuart(progress);
+            // 시간에 따라 오른 정도 가져오는 공식
+            const currentValue = Math.floor(startValue + (targetNum - startValue) * easedProgress);
+            
+            //텍스트 변경해주기
+            target.textContent = currentValue.toLocaleString();
+
+            if(progress < 1){
+                //다시 호출
+                requestAnimationFrame(update);
+            }
+        }
+        //requestAnimationFrame으로 호출
+        requestAnimationFrame(update);
+}
+
+//함수 실행부분
+    const stockText = document.querySelector('.StockText h1');
+
+    number(1619, stockText); //duration 없으면 2 초

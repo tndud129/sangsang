@@ -27,7 +27,7 @@ body{
     $color5:#273646;
     font-family: "NotoSansKR-Regular";
     .nav_bg{width: 100%; background-color: rgba($color: $color1, $alpha: 0.9);
-        position: absolute; transition: height 0.3s ease;
+        position: absolute; transition: height 0.3s ease; overflow: hidden;
         height: 0;
     left: 0; top: 10rem; z-index: 100; display: none;}
     header{
@@ -65,8 +65,8 @@ body{
                             width: 100%;
                             border-top: 1px solid #d1d1d1;
                             position: absolute; display: none;
-                            top: 100%; left: 0;transition: height 0.3s ease;
-                            height: 0;
+                            top: 100%; left: 0; transition: height 0.3s ease;
+                            height: 0; overflow: hidden;
                             z-index: 1000;
                             ul{height: 100%; border: 1px solid red;
                                 li{

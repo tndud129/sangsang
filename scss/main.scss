@@ -60,7 +60,7 @@ body{
                     height: 35rem;
                 }
                 @include mobile {
-                    height: 25rem;
+                    height: 50%; border-radius: 0;
                 }
                 img{object-position: center; object-fit: cover; height: 100%; width: 100%;}
             }
@@ -73,15 +73,15 @@ body{
                 @include desktop{
                     font-size: 7rem; top: 16rem; text-align: center;
                     left: 50%; top: 20rem; transform: translateX(-50%); width: 100%;
-                }
+                }   
                 @include tablet {
                     font-size: 7vw; top: 23rem;
                 }
                 @include mobile {
-                    font-size: 8.4vw; top: 33.5rem;
+                    font-size: 8.4vw; top: 27rem; border: 2px solid red;
                 }
                 .first{margin-bottom: 3rem;
-                @include desktop{
+                @include desktop {
                     margin-bottom: 1.5rem;
                 }
                 }
@@ -235,6 +235,55 @@ body{
                 }
             }
         }
+        }
+    }
+
+    .Stock{
+        background: url(../images/stock.jpg) no-repeat center;
+        width: 100%; height: 100rem; background-size: cover;
+        padding: 0 1rem;
+        @include desktop {height: auto;}
+        .StockInner{border: 1px solid red; padding: 8.5rem 0;
+            flex-wrap: wrap;
+            .StockBox1{
+                width: 50%; padding: 10rem 0;
+                @include desktop {width: 100%;}
+                h3{font-size: 4.6rem; font-weight: 700; margin-bottom: 10rem;}
+                .StockText{margin-top: 3rem;
+                    p{font-size: 3.2rem; font-weight: 300; color: $color2;}
+                    h1{font-size: 10rem; font-weight: 700;}
+                    .rise{margin-top: 3rem;
+                        ul{
+                            li{gap: 2rem;
+                                p{font-size: 3.2rem; font-weight: 300;
+                                    &:nth-child(2){color: $color4;
+                                        &::before{content: ""; background: url(../images/uparrow.svg) no-repeat; width: 3rem; height: 3rem;
+                                            display: inline-block; margin-right: 1rem;}}}
+                                &:first-child::after{content: ""; width: 2px; height: 3.2rem; background-color: #d1d1d1; margin-right: 2rem;}
+                                &:last-child{
+                                    p{
+                                        &::before{display: none;}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .StockBox2{
+                width: 50%; padding: 10rem 0;
+                @include desktop {width: 100%;}
+                ul{flex-wrap: wrap; gap: 2rem;
+                    li{width: 30rem; height: 30rem; background-color: $color1;
+                        border-radius: 50px; text-align: center; padding: 11rem 0;
+                        box-shadow: 2px 2px 5px rgba($color: #d1d1d1, $alpha: 0.5);
+                        @include desktop {width: calc(100% / 2 - 2rem);}
+                        @include tablet {width: calc(100% - 2rem)}
+                        p{font-size: 3.2rem; font-weight: 100; margin-bottom: 2rem;}
+                        span{font-size: 3.5rem; font-weight: 700; display: block;}
+                    }
+                }
+            }
         }
     }
 }

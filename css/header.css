@@ -11,6 +11,7 @@ body .nav_bg {
   position: absolute;
   -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
+  overflow: hidden;
   height: 0;
   left: 0;
   top: 10rem;
@@ -84,6 +85,7 @@ body header .h_inner nav ul li .depth {
   -webkit-transition: height 0.3s ease;
   transition: height 0.3s ease;
   height: 0;
+  overflow: hidden;
   z-index: 1000;
 }
 body header .h_inner nav ul li .depth ul {

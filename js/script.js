@@ -14,44 +14,48 @@ window.addEventListener('wheel', (e)=>{
 });
 
 
-
 const mainMenu = document.querySelector('.h_inner > nav > ul');
 const menuBg = document.querySelector('.nav_bg');
 const subMenus = document.querySelectorAll('.depth');
 let isEnter = true;
-mainMenu.addEventListener('mouseenter', () => {
-    isEnter =true;
-    menuBg.style.display = 'block';
-    subMenus.forEach(menu => {
-        menu.style.display = 'block';
-    });
+
+function toggleMenu(show) {
+    const elements = [menuBg, ...subMenus];
     
-    setTimeout(() => {
-        menuBg.style.height = '30rem';
-        subMenus.forEach(menu => {
-            menu.style.height = '30rem';
+    if (show) {
+        isEnter = true;
+        elements.forEach(el => {
+            el.style.display = 'block';
+            el.style.height = '0';
+            el.style.overflow = 'hidden';
         });
-    }, 0);
-});
 
-mainMenu.addEventListener('mouseleave', () => {
-    isEnter =false;
-    menuBg.style.height = '0';
-    subMenus.forEach(menu => {
-        menu.style.height = '0';
-    });
+        // 강제 리플로우
+        menuBg.offsetHeight;
 
-    setTimeout(() => {
-        if(!isEnter){
+        // 모든 요소 동시에 height 변경
+        elements.forEach(el => {
+            el.style.height = '30rem';
+        });
+    } else {
+        isEnter = false;
+        // 모든 요소 동시에 height 0
+        elements.forEach(el => {
+            el.style.height = '0';
+        });
 
-            menuBg.style.display = 'none';
-            subMenus.forEach(menu => {
-                menu.style.display = 'none';
-            });
+        setTimeout(() => {
+            if (!isEnter) {
+                elements.forEach(el => {
+                    el.style.display = 'none';
+                });
             }
+        }, 300);
+    }
+}
 
-    }, 300);
-});
+mainMenu.addEventListener('mouseenter', () => toggleMenu(true));
+mainMenu.addEventListener('mouseleave', () => toggleMenu(false));
 
 
 
@@ -238,3 +242,8 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
     }, { passive: false });
 });
+
+
+const Number = (Up) => {
+    
+}

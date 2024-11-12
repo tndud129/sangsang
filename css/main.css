@@ -8,8 +8,11 @@ body {
 body .nav_bg {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
-  height: 30rem;
   position: absolute;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+  overflow: hidden;
+  height: 0;
   left: 0;
   top: 10rem;
   z-index: 100;
@@ -74,12 +77,15 @@ body header .h_inner nav ul li a:hover {
 }
 body header .h_inner nav ul li .depth {
   width: 100%;
-  height: 15rem;
   border-top: 1px solid #d1d1d1;
   position: absolute;
   display: none;
   top: 100%;
   left: 0;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+  height: 0;
+  overflow: hidden;
   z-index: 1000;
 }
 body header .h_inner nav ul li .depth ul {
@@ -481,7 +487,8 @@ body .main .mainInner .mainBg {
 }
 @media (max-width: 480px) {
   body .main .mainInner .mainBg {
-    height: 25rem;
+    height: 50%;
+    border-radius: 0;
   }
 }
 body .main .mainInner .mainBg img {
@@ -525,7 +532,8 @@ body .main .mainInner .mainText .char {
 @media (max-width: 480px) {
   body .main .mainInner .mainText {
     font-size: 8.4vw;
-    top: 33.5rem;
+    top: 27rem;
+    border: 2px solid red;
   }
 }
 body .main .mainInner .mainText .first {
@@ -872,4 +880,123 @@ body .News .NewInner .NewBox2 .NewsDepth .NewsText span {
   body .News .NewInner .NewBox2 .NewsDepth .NewsText span {
     margin: 0 0 1rem 0;
   }
+}
+body .Stock {
+  background: url(../images/stock.jpg) no-repeat center;
+  width: 100%;
+  height: 100rem;
+  background-size: cover;
+  padding: 0 1rem;
+}
+@media (max-width: 1300px) {
+  body .Stock {
+    height: auto;
+  }
+}
+body .Stock .StockInner {
+  border: 1px solid red;
+  padding: 8.5rem 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+body .Stock .StockInner .StockBox1 {
+  width: 50%;
+  padding: 10rem 0;
+}
+@media (max-width: 1300px) {
+  body .Stock .StockInner .StockBox1 {
+    width: 100%;
+  }
+}
+body .Stock .StockInner .StockBox1 h3 {
+  font-size: 4.6rem;
+  font-weight: 700;
+  margin-bottom: 10rem;
+}
+body .Stock .StockInner .StockBox1 .StockText {
+  margin-top: 3rem;
+}
+body .Stock .StockInner .StockBox1 .StockText p {
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: #999;
+}
+body .Stock .StockInner .StockBox1 .StockText h1 {
+  font-size: 10rem;
+  font-weight: 700;
+}
+body .Stock .StockInner .StockBox1 .StockText .rise {
+  margin-top: 3rem;
+}
+body .Stock .StockInner .StockBox1 .StockText .rise ul li {
+  gap: 2rem;
+}
+body .Stock .StockInner .StockBox1 .StockText .rise ul li p {
+  font-size: 3.2rem;
+  font-weight: 300;
+}
+body .Stock .StockInner .StockBox1 .StockText .rise ul li p:nth-child(2) {
+  color: #00BFB6;
+}
+body .Stock .StockInner .StockBox1 .StockText .rise ul li p:nth-child(2)::before {
+  content: "";
+  background: url(../images/uparrow.svg) no-repeat;
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+  margin-right: 1rem;
+}
+body .Stock .StockInner .StockBox1 .StockText .rise ul li:first-child::after {
+  content: "";
+  width: 2px;
+  height: 3.2rem;
+  background-color: #d1d1d1;
+  margin-right: 2rem;
+}
+body .Stock .StockInner .StockBox1 .StockText .rise ul li:last-child p::before {
+  display: none;
+}
+body .Stock .StockInner .StockBox2 {
+  width: 50%;
+  padding: 10rem 0;
+}
+@media (max-width: 1300px) {
+  body .Stock .StockInner .StockBox2 {
+    width: 100%;
+  }
+}
+body .Stock .StockInner .StockBox2 ul {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+body .Stock .StockInner .StockBox2 ul li {
+  width: 30rem;
+  height: 30rem;
+  background-color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  padding: 11rem 0;
+  -webkit-box-shadow: 2px 2px 5px rgba(209, 209, 209, 0.5);
+          box-shadow: 2px 2px 5px rgba(209, 209, 209, 0.5);
+}
+@media (max-width: 1300px) {
+  body .Stock .StockInner .StockBox2 ul li {
+    width: calc(50% - 2rem);
+  }
+}
+@media (max-width: 768px) {
+  body .Stock .StockInner .StockBox2 ul li {
+    width: calc(100% - 2rem);
+  }
+}
+body .Stock .StockInner .StockBox2 ul li p {
+  font-size: 3.2rem;
+  font-weight: 100;
+  margin-bottom: 2rem;
+}
+body .Stock .StockInner .StockBox2 ul li span {
+  font-size: 3.5rem;
+  font-weight: 700;
+  display: block;
 }/*# sourceMappingURL=main.css.map */

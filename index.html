@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상상인</title>
     <link rel="stylesheet" href="./css/total.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
     <div class="nav_bg"></div>
@@ -287,7 +289,7 @@
     </div><!-- business -->
 
     <div class="News">
-        <div class="NewInner center flex-02">
+        <div class="NewInner center flex-02" data-aos="fade-up" data-aos-duration="3000">
             <div class="NewBox1">
                 <h4>News & Notice</h4>
                 <h1>
@@ -356,6 +358,79 @@
         </div>
     </div>
 
+    <div class="employment">
+        <div class="employmentInner center">
+            <div class="employmentText flex-01">
+                <div class="eText1">
+                    <h4>인재채용</h4>
+                    <p>기회, 도전, 변화를 갖추고<br>
+                    행동으로 실천합니다.</p>
+                </div>
+                <div class="eText2">
+                    <a href="#none">
+                        <span>인재채용 바로가기</span>
+                    </a>
+                </div>
+            </div>
+            <ul class="eBtn flex-01">
+                <li>
+                    <a href="#none">
+                        <i class="eImg1"></i>
+                        <p>인재상</p>
+                        <span>소통하고 도전하는 창의적인 상상인을 찾습니다.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <i class="eImg2"></i>
+                        <p>직무소개</p>
+                        <span>상상인의 다양한 직무를 확인해 보세요.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#none">
+                        <i class="eImg3"></i>
+                        <p>채용절차</p>
+                        <span>상상인의 채용프로세스를 확인해 보세요.</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerInner center">
+            <h1 class="ftLogo"><img src="images/sang_logo_w.svg" alt="ftLogo"></h1>
+            <div class="ftText">
+                <span>경기도 성남시 분당구 황새울로 358</span>
+                <ul class="flex-02">
+                    <li>
+                        <a href="#none">Tel 02-2167-8500</a>
+                    </li>
+                    <li>
+                        <a href="#none">Fax 02-2167-8600</a>
+                    </li>
+                </ul>
+                <ul class="flex-02">
+                    <li>
+                        <a href="#none">개인정보처리방침</a>
+                    </li>
+                    <li>
+                        <a href="#none">이메일무단수집거부</a>
+                    </li>
+                    <li>
+                        <a href="#none">사이버문고</a>
+                    </li>
+                </ul>
+                <p>Copyright &copy; 2024 sangsangin. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        AOS.init();
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

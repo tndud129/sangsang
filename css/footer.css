@@ -1,0 +1,69 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+body .nav_bg {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+  overflow: hidden;
+  height: 0;
+  left: 0;
+  top: 10rem;
+  z-index: 100;
+  display: none;
+}
+body footer {
+  height: 47.4;
+  background-color: #273646;
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 0 1rem;
+}
+body footer .footerInner {
+  padding: 9rem 0;
+}
+body footer .footerInner .ftLogo {
+  width: 15rem;
+  height: auto;
+  margin-bottom: 4rem;
+}
+body footer .footerInner .ftLogo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+body footer .footerInner .ftText span {
+  color: #999;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+body footer .footerInner .ftText ul {
+  gap: 3rem;
+  margin: 3rem 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media (max-width: 480px) {
+  body footer .footerInner .ftText ul li {
+    width: 100%;
+  }
+}
+body footer .footerInner .ftText ul li a {
+  display: inline-block;
+  color: #999;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+body footer .footerInner .ftText ul li a:hover {
+  text-decoration: underline;
+}
+body footer .footerInner .ftText p {
+  font-size: 1.8rem;
+  color: #999;
+  font-weight: 100;
+}/*# sourceMappingURL=footer.css.map */

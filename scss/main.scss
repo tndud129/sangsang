@@ -1,8 +1,16 @@
 @import './header';
+@import './footer';
+@import 'aos/dist/aos.css';
+
 
 $mobile: 480px;
 $tablet: 768px;
 $desktop: 1300px;
+$color1:#fff;
+$color2:#999;
+$color3:#0F908A;
+$color4:#00BFB6;
+$color5:#273646;
 
 @mixin desktop{
     @media (max-width: $desktop) {
@@ -23,14 +31,8 @@ $desktop: 1300px;
 body{
     background-color: #fff;
     font-size: 10px;
-    $color1:#fff;
-    $color2:#999;
-    $color3:#0F908A;
-    $color4:#00BFB6;
-    $color5:#273646;
-    font-family: "NotoSansKR-Regular";
-
-    .main{height: 63rem; border: 1px solid red;
+    font-family: 'Noto Sans KR', sans-serif;
+    .main{height: 63rem;
         z-index: 1; margin: 0 5rem; position: relative;
         @include desktop{
             margin: 0 1rem;
@@ -53,9 +55,9 @@ body{
                 }
             }
         }
-        .mainInner{height: 100%; border: 1px solid skyblue;
+        .mainInner{height: 100%;
             .mainBg{position: absolute; bottom: 0; width: 100%; height: 40rem;
-                border-radius: 200px; border: 1px solid red; overflow: hidden;
+                border-radius: 200px; overflow: hidden;
                 @include desktop {
                     height: 35rem;
                 }
@@ -64,21 +66,21 @@ body{
                 }
                 img{object-position: center; object-fit: cover; height: 100%; width: 100%;}
             }
-            .mainText{position: absolute; left: 10rem; top: 13rem;
+            .mainText{position: absolute; left: 10rem; top: 9rem;
                 font-family: 'Pretendard-Regular';
-                font-size: 8rem; font-weight: 700; z-index: 10;
+                font-size: 3.3vw; font-weight: 700; z-index: 10;
                 .char {
                     display: inline-block;
                 }
                 @include desktop{
-                    font-size: 7rem; top: 16rem; text-align: center;
+                    font-size: 3.6rem; top: 16rem; text-align: center;
                     left: 50%; top: 20rem; transform: translateX(-50%); width: 100%;
                 }   
                 @include tablet {
-                    font-size: 7vw; top: 23rem;
+                    font-size: 4vw; top: 23rem;
                 }
                 @include mobile {
-                    font-size: 8.4vw; top: 27rem; border: 2px solid red;
+                    font-size: 4vw; top: 27rem;
                 }
                 .first{margin-bottom: 3rem;
                 @include desktop {
@@ -103,9 +105,9 @@ body{
         }
     }
 
-    .business{margin-top: 10rem;
+    .business{margin: 10rem 5rem 0;
         @include desktop{
-            padding: 0 1rem;
+            padding: 0 1rem; margin: 10rem 0 0 0;
         }
         .businessInner{
             .businessText{
@@ -114,12 +116,13 @@ body{
                 }
                 p{font-size: 2rem; font-weight: 300; color: #666;
                     height: 3.5rem; line-height: 3.5rem;
-                    border: 1px solid red; position: relative;
+                    position: relative;
                     &::after{
                         content: ""; background: url(../images/next_666.svg) no-repeat;
                         position: absolute; top: 0; left: 20rem;
-                        width: 3rem; height: 3rem; display: inline-block; border: 1px solid red;
-                    }}
+                        width: 3rem; height: 3rem; display: inline-block;
+                    }
+                }
             }
             .businessImgbox{
                 margin-top: 5rem; gap: 1rem; flex-wrap: wrap;
@@ -128,7 +131,7 @@ body{
                 .busiImg3{background: url(../images/busi3.jpg) no-repeat center; background-size: cover;}
                 .busiBox{
                     width: calc(100% / 3 - 1rem); height: 44.4rem;
-                    border-radius: 130px; border: 1px solid red;
+                    border-radius: 130px;
                     @include desktop{
                         width: 100%;
                     }
@@ -159,6 +162,7 @@ body{
     .News{
         background-color: $color3; padding: 3rem 6rem;
         width: 100%; margin-top: 10rem;
+        @include tablet {padding: 0 1rem;}
         .NewInner{
             width: 100%; height: 100%; flex-wrap: wrap;
             .NewBox1{
@@ -243,24 +247,32 @@ body{
         width: 100%; height: 100rem; background-size: cover;
         padding: 0 1rem;
         @include desktop {height: auto;}
-        .StockInner{border: 1px solid red; padding: 8.5rem 0;
+        // @include tablet {background: url(../images/stock_mob.jpg) no-repeat center;
+        //     height: auto; background-size: cover;}
+        .StockInner{padding: 8.5rem 5rem;
             flex-wrap: wrap;
+            @include tablet {padding: 8.5rem 0;}
+            @include mobile {padding: 0;}
             .StockBox1{
                 width: 50%; padding: 10rem 0;
                 @include desktop {width: 100%;}
-                h3{font-size: 4.6rem; font-weight: 700; margin-bottom: 10rem;}
+                h3{font-size: 4.6rem; font-weight: 700; margin: 10rem 0;
+                    @include desktop {margin: 3rem 0 10rem 0;}}
                 .StockText{margin-top: 3rem;
-                    p{font-size: 3.2rem; font-weight: 300; color: $color2;}
+                    p{font-size: 3.2rem; color: $color2;}
                     h1{font-size: 10rem; font-weight: 700;}
-                    .rise{margin-top: 3rem;
-                        ul{
+                    .rise{margin-top: 3rem; 
+                        ul{flex-wrap: wrap;
                             li{gap: 2rem;
-                                p{font-size: 3.2rem; font-weight: 300;
+                                @include mobile {width: 100%;}
+                                p{font-size: 3.2rem;
                                     &:nth-child(2){color: $color4;
                                         &::before{content: ""; background: url(../images/uparrow.svg) no-repeat; width: 3rem; height: 3rem;
                                             display: inline-block; margin-right: 1rem;}}}
-                                &:first-child::after{content: ""; width: 2px; height: 3.2rem; background-color: #d1d1d1; margin-right: 2rem;}
+                                &:first-child::after{content: ""; width: 2px; height: 3.2rem; background-color: #d1d1d1; margin-right: 2rem;
+                                    @include mobile {display: none;}}
                                 &:last-child{
+                                    @include mobile {margin-top: 2rem;}
                                     p{
                                         &::before{display: none;}
                                     }
@@ -274,13 +286,62 @@ body{
                 width: 50%; padding: 10rem 0;
                 @include desktop {width: 100%;}
                 ul{flex-wrap: wrap; gap: 2rem;
-                    li{width: 30rem; height: 30rem; background-color: $color1;
+                    @include desktop {justify-content: center;}
+                    li{width: calc(100% / 2 - 2rem); height: 30rem; background-color: $color1;
                         border-radius: 50px; text-align: center; padding: 11rem 0;
                         box-shadow: 2px 2px 5px rgba($color: #d1d1d1, $alpha: 0.5);
                         @include desktop {width: calc(100% / 2 - 2rem);}
                         @include tablet {width: calc(100% - 2rem)}
                         p{font-size: 3.2rem; font-weight: 100; margin-bottom: 2rem;}
                         span{font-size: 3.5rem; font-weight: 700; display: block;}
+                    }
+                }
+            }
+        }
+    }
+
+
+    .employment{
+        background: url(../images/employmentBg.jpg) no-repeat center;
+        background-size: cover; height: auto; padding: 0 1rem;
+        .employmentInner{
+            padding: 10rem 0;
+            .employmentText{
+                flex-wrap: wrap;
+                .eText1{width: 80%;
+                    @include desktop {width: 100%;}
+                    h4{font-size: 3.2rem; font-weight: 700; color: $color1; margin-bottom: 5rem;}
+                    p{font-size: 4.2rem; font-weight: 700; color: $color1; line-height: 1.5;}
+                }
+                .eText2{width: 15%;
+                    @include desktop {width: 20rem; margin-top: 3rem;}
+                    a{display: inline-block; width: 100%; height: 7rem; border-radius: 100px;
+                        border: 1px solid $color1; transition: all 0.5s;
+                        &:hover{border: 1px solid transparent; background-color: $color1;}
+                        span{font-size: 1.8rem; color: $color1;
+                            height: 7rem; transition: all 0.5s;
+                            display: inline-block; line-height: 7rem; width: 100%; text-align: center;
+                            &:hover{color: #333;}}
+                    }
+                }
+            }
+            .eBtn{
+                margin-top: 6rem; gap: 2rem; flex-wrap: wrap;
+                li{width: calc(100% /3 - 2rem);
+                    @include tablet {width: 100%;}
+                    a{display: block; background: rgba($color: #fff, $alpha: 0.7);
+                        transition: all 0.5s; width: 100%;
+                        height: 25rem; border-radius: 50px 25px; padding: 4rem;
+                        &:hover{
+                            background: rgba($color: #fff, $alpha: 1.0);
+                        }
+                        @include mobile {height: auto;}
+                        i{display: block; width: 6rem; height: 6rem; background-repeat: no-repeat; background-size: cover;}
+                        .eImg1{background: url(../images/eBtn1.svg);}
+                        .eImg2{background: url(../images/eBtn2.svg);}
+                        .eImg3{background: url(../images/eBtn3.svg);}
+                        p{font-size: 2.6rem; font-weight: 700; margin: 3rem 0;}
+                        span{font-size: 1.6rem;}
                     }
                 }
             }

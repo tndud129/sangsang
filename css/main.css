@@ -1,9 +1,10 @@
+@import 'aos/dist/aos.css';
 html {
   font-size: 10px;
 }
 
 body {
-  font-family: "NotoSansKR-Regular";
+  font-family: "Noto Sans KR", sans-serif;
 }
 body .nav_bg {
   width: 100%;
@@ -29,20 +30,18 @@ body header {
   }
 }
 body header .h_inner {
-  border: 1px solid red;
   position: relative;
   height: 100%;
 }
 body header .h_inner .h_logo {
-  width: 15em;
   position: absolute;
-  padding: 1em 0;
+  width: 15rem;
+  padding: 1rem 0;
 }
 body header .h_inner .h_logo a {
   display: block;
   width: 100%;
   height: 100%;
-  border: 1px solid red;
 }
 body header .h_inner nav {
   width: 60%;
@@ -90,7 +89,6 @@ body header .h_inner nav ul li .depth {
 }
 body header .h_inner nav ul li .depth ul {
   height: 100%;
-  border: 1px solid red;
 }
 body header .h_inner nav ul li .depth ul li {
   width: 100%;
@@ -112,12 +110,10 @@ body header .h_inner .menu_lang {
   top: 0;
   width: 15rem;
   height: 100%;
-  border: 1px solid black;
 }
 body header .h_inner .menu_lang .langWrap {
   width: 10rem;
   padding: 2rem 0;
-  border: 1px solid rebeccapurple;
 }
 body header .h_inner .menu_lang .langWrap ul {
   -webkit-box-orient: vertical;
@@ -174,7 +170,6 @@ body header .h_inner .menu_lang .h_menu a {
   background: url(../images/menu.svg) no-repeat;
   display: block;
   margin: 2.8rem auto;
-  border: 1px solid red;
 }
 body header .h_inner .menu_lang .m_menu {
   position: relative;
@@ -188,7 +183,6 @@ body header .h_inner .menu_lang .m_menu a {
   background: url(../images/menu.svg) no-repeat;
   display: none;
   margin: 2.8rem auto;
-  border: 1px solid red;
 }
 @media (max-width: 1300px) {
   body header .h_inner .menu_lang .m_menu a {
@@ -327,7 +321,6 @@ body header .m_nav {
   -webkit-overflow-scrolling: touch;
   width: 100%;
   height: 100vh;
-  border: 1px solid red;
   z-index: 1000;
   display: none;
   opacity: 0;
@@ -415,14 +408,83 @@ body header .m_nav .m_navInner ul li .m_navDepth ul li a:hover {
   font-weight: 700;
 }
 
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+body .nav_bg {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+  overflow: hidden;
+  height: 0;
+  left: 0;
+  top: 10rem;
+  z-index: 100;
+  display: none;
+}
+body footer {
+  height: 47.4;
+  background-color: #273646;
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 0 1rem;
+}
+body footer .footerInner {
+  padding: 9rem 0;
+}
+body footer .footerInner .ftLogo {
+  width: 15rem;
+  height: auto;
+  margin-bottom: 4rem;
+}
+body footer .footerInner .ftLogo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+body footer .footerInner .ftText span {
+  color: #999;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+body footer .footerInner .ftText ul {
+  gap: 3rem;
+  margin: 3rem 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media (max-width: 480px) {
+  body footer .footerInner .ftText ul li {
+    width: 100%;
+  }
+}
+body footer .footerInner .ftText ul li a {
+  display: inline-block;
+  color: #999;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+body footer .footerInner .ftText ul li a:hover {
+  text-decoration: underline;
+}
+body footer .footerInner .ftText p {
+  font-size: 1.8rem;
+  color: #999;
+  font-weight: 100;
+}
+
 body {
   background-color: #fff;
   font-size: 10px;
-  font-family: "NotoSansKR-Regular";
+  font-family: "Noto Sans KR", sans-serif;
 }
 body .main {
   height: 63rem;
-  border: 1px solid red;
   z-index: 1;
   margin: 0 5rem;
   position: relative;
@@ -469,7 +531,6 @@ body .main .mainSns ul li a {
 }
 body .main .mainInner {
   height: 100%;
-  border: 1px solid skyblue;
 }
 body .main .mainInner .mainBg {
   position: absolute;
@@ -477,7 +538,6 @@ body .main .mainInner .mainBg {
   width: 100%;
   height: 40rem;
   border-radius: 200px;
-  border: 1px solid red;
   overflow: hidden;
 }
 @media (max-width: 1300px) {
@@ -502,9 +562,9 @@ body .main .mainInner .mainBg img {
 body .main .mainInner .mainText {
   position: absolute;
   left: 10rem;
-  top: 13rem;
+  top: 9rem;
   font-family: "Pretendard-Regular";
-  font-size: 8rem;
+  font-size: 3.3vw;
   font-weight: 700;
   z-index: 10;
 }
@@ -513,7 +573,7 @@ body .main .mainInner .mainText .char {
 }
 @media (max-width: 1300px) {
   body .main .mainInner .mainText {
-    font-size: 7rem;
+    font-size: 3.6rem;
     top: 16rem;
     text-align: center;
     left: 50%;
@@ -525,15 +585,14 @@ body .main .mainInner .mainText .char {
 }
 @media (max-width: 768px) {
   body .main .mainInner .mainText {
-    font-size: 7vw;
+    font-size: 4vw;
     top: 23rem;
   }
 }
 @media (max-width: 480px) {
   body .main .mainInner .mainText {
-    font-size: 8.4vw;
+    font-size: 4vw;
     top: 27rem;
-    border: 2px solid red;
   }
 }
 body .main .mainInner .mainText .first {
@@ -570,11 +629,12 @@ body .main .mainInner .mainText h3 {
   }
 }
 body .business {
-  margin-top: 10rem;
+  margin: 10rem 5rem 0;
 }
 @media (max-width: 1300px) {
   body .business {
     padding: 0 1rem;
+    margin: 10rem 0 0 0;
   }
 }
 body .business .businessInner .businessText h1 {
@@ -588,7 +648,6 @@ body .business .businessInner .businessText p {
   color: #666;
   height: 3.5rem;
   line-height: 3.5rem;
-  border: 1px solid red;
   position: relative;
 }
 body .business .businessInner .businessText p::after {
@@ -600,7 +659,6 @@ body .business .businessInner .businessText p::after {
   width: 3rem;
   height: 3rem;
   display: inline-block;
-  border: 1px solid red;
 }
 body .business .businessInner .businessImgbox {
   margin-top: 5rem;
@@ -623,7 +681,6 @@ body .business .businessInner .businessImgbox .busiBox {
   width: calc(33.3333333333% - 1rem);
   height: 44.4rem;
   border-radius: 130px;
-  border: 1px solid red;
 }
 @media (max-width: 1300px) {
   body .business .businessInner .businessImgbox .busiBox {
@@ -693,6 +750,11 @@ body .News {
   padding: 3rem 6rem;
   width: 100%;
   margin-top: 10rem;
+}
+@media (max-width: 768px) {
+  body .News {
+    padding: 0 1rem;
+  }
 }
 body .News .NewInner {
   width: 100%;
@@ -894,10 +956,19 @@ body .Stock {
   }
 }
 body .Stock .StockInner {
-  border: 1px solid red;
-  padding: 8.5rem 0;
+  padding: 8.5rem 5rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  body .Stock .StockInner {
+    padding: 8.5rem 0;
+  }
+}
+@media (max-width: 480px) {
+  body .Stock .StockInner {
+    padding: 0;
+  }
 }
 body .Stock .StockInner .StockBox1 {
   width: 50%;
@@ -911,14 +982,18 @@ body .Stock .StockInner .StockBox1 {
 body .Stock .StockInner .StockBox1 h3 {
   font-size: 4.6rem;
   font-weight: 700;
-  margin-bottom: 10rem;
+  margin: 10rem 0;
+}
+@media (max-width: 1300px) {
+  body .Stock .StockInner .StockBox1 h3 {
+    margin: 3rem 0 10rem 0;
+  }
 }
 body .Stock .StockInner .StockBox1 .StockText {
   margin-top: 3rem;
 }
 body .Stock .StockInner .StockBox1 .StockText p {
   font-size: 3.2rem;
-  font-weight: 300;
   color: #999;
 }
 body .Stock .StockInner .StockBox1 .StockText h1 {
@@ -928,12 +1003,20 @@ body .Stock .StockInner .StockBox1 .StockText h1 {
 body .Stock .StockInner .StockBox1 .StockText .rise {
   margin-top: 3rem;
 }
+body .Stock .StockInner .StockBox1 .StockText .rise ul {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 body .Stock .StockInner .StockBox1 .StockText .rise ul li {
   gap: 2rem;
 }
+@media (max-width: 480px) {
+  body .Stock .StockInner .StockBox1 .StockText .rise ul li {
+    width: 100%;
+  }
+}
 body .Stock .StockInner .StockBox1 .StockText .rise ul li p {
   font-size: 3.2rem;
-  font-weight: 300;
 }
 body .Stock .StockInner .StockBox1 .StockText .rise ul li p:nth-child(2) {
   color: #00BFB6;
@@ -953,6 +1036,16 @@ body .Stock .StockInner .StockBox1 .StockText .rise ul li:first-child::after {
   background-color: #d1d1d1;
   margin-right: 2rem;
 }
+@media (max-width: 480px) {
+  body .Stock .StockInner .StockBox1 .StockText .rise ul li:first-child::after {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  body .Stock .StockInner .StockBox1 .StockText .rise ul li:last-child {
+    margin-top: 2rem;
+  }
+}
 body .Stock .StockInner .StockBox1 .StockText .rise ul li:last-child p::before {
   display: none;
 }
@@ -970,8 +1063,15 @@ body .Stock .StockInner .StockBox2 ul {
       flex-wrap: wrap;
   gap: 2rem;
 }
+@media (max-width: 1300px) {
+  body .Stock .StockInner .StockBox2 ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 body .Stock .StockInner .StockBox2 ul li {
-  width: 30rem;
+  width: calc(50% - 2rem);
   height: 30rem;
   background-color: #fff;
   border-radius: 50px;
@@ -999,4 +1099,129 @@ body .Stock .StockInner .StockBox2 ul li span {
   font-size: 3.5rem;
   font-weight: 700;
   display: block;
+}
+body .employment {
+  background: url(../images/employmentBg.jpg) no-repeat center;
+  background-size: cover;
+  height: auto;
+  padding: 0 1rem;
+}
+body .employment .employmentInner {
+  padding: 10rem 0;
+}
+body .employment .employmentInner .employmentText {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+body .employment .employmentInner .employmentText .eText1 {
+  width: 80%;
+}
+@media (max-width: 1300px) {
+  body .employment .employmentInner .employmentText .eText1 {
+    width: 100%;
+  }
+}
+body .employment .employmentInner .employmentText .eText1 h4 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5rem;
+}
+body .employment .employmentInner .employmentText .eText1 p {
+  font-size: 4.2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+}
+body .employment .employmentInner .employmentText .eText2 {
+  width: 15%;
+}
+@media (max-width: 1300px) {
+  body .employment .employmentInner .employmentText .eText2 {
+    width: 20rem;
+    margin-top: 3rem;
+  }
+}
+body .employment .employmentInner .employmentText .eText2 a {
+  display: inline-block;
+  width: 100%;
+  height: 7rem;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+body .employment .employmentInner .employmentText .eText2 a:hover {
+  border: 1px solid transparent;
+  background-color: #fff;
+}
+body .employment .employmentInner .employmentText .eText2 a span {
+  font-size: 1.8rem;
+  color: #fff;
+  height: 7rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: inline-block;
+  line-height: 7rem;
+  width: 100%;
+  text-align: center;
+}
+body .employment .employmentInner .employmentText .eText2 a span:hover {
+  color: #333;
+}
+body .employment .employmentInner .eBtn {
+  margin-top: 6rem;
+  gap: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+body .employment .employmentInner .eBtn li {
+  width: calc(33.3333333333% - 2rem);
+}
+@media (max-width: 768px) {
+  body .employment .employmentInner .eBtn li {
+    width: 100%;
+  }
+}
+body .employment .employmentInner .eBtn li a {
+  display: block;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 100%;
+  height: 25rem;
+  border-radius: 50px 25px;
+  padding: 4rem;
+}
+body .employment .employmentInner .eBtn li a:hover {
+  background: white;
+}
+@media (max-width: 480px) {
+  body .employment .employmentInner .eBtn li a {
+    height: auto;
+  }
+}
+body .employment .employmentInner .eBtn li a i {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .employment .employmentInner .eBtn li a .eImg1 {
+  background: url(../images/eBtn1.svg);
+}
+body .employment .employmentInner .eBtn li a .eImg2 {
+  background: url(../images/eBtn2.svg);
+}
+body .employment .employmentInner .eBtn li a .eImg3 {
+  background: url(../images/eBtn3.svg);
+}
+body .employment .employmentInner .eBtn li a p {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin: 3rem 0;
+}
+body .employment .employmentInner .eBtn li a span {
+  font-size: 1.6rem;
 }/*# sourceMappingURL=main.css.map */

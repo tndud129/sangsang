@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: "NotoSansKR-Regular";
+  font-family: "Noto Sans KR", sans-serif;
 }
 body .nav_bg {
   width: 100%;
@@ -29,20 +29,18 @@ body header {
   }
 }
 body header .h_inner {
-  border: 1px solid red;
   position: relative;
   height: 100%;
 }
 body header .h_inner .h_logo {
-  width: 15em;
   position: absolute;
-  padding: 1em 0;
+  width: 15rem;
+  padding: 1rem 0;
 }
 body header .h_inner .h_logo a {
   display: block;
   width: 100%;
   height: 100%;
-  border: 1px solid red;
 }
 body header .h_inner nav {
   width: 60%;
@@ -90,7 +88,6 @@ body header .h_inner nav ul li .depth {
 }
 body header .h_inner nav ul li .depth ul {
   height: 100%;
-  border: 1px solid red;
 }
 body header .h_inner nav ul li .depth ul li {
   width: 100%;
@@ -112,12 +109,10 @@ body header .h_inner .menu_lang {
   top: 0;
   width: 15rem;
   height: 100%;
-  border: 1px solid black;
 }
 body header .h_inner .menu_lang .langWrap {
   width: 10rem;
   padding: 2rem 0;
-  border: 1px solid rebeccapurple;
 }
 body header .h_inner .menu_lang .langWrap ul {
   -webkit-box-orient: vertical;
@@ -174,7 +169,6 @@ body header .h_inner .menu_lang .h_menu a {
   background: url(../images/menu.svg) no-repeat;
   display: block;
   margin: 2.8rem auto;
-  border: 1px solid red;
 }
 body header .h_inner .menu_lang .m_menu {
   position: relative;
@@ -188,7 +182,6 @@ body header .h_inner .menu_lang .m_menu a {
   background: url(../images/menu.svg) no-repeat;
   display: none;
   margin: 2.8rem auto;
-  border: 1px solid red;
 }
 @media (max-width: 1300px) {
   body header .h_inner .menu_lang .m_menu a {
@@ -202,7 +195,7 @@ body header .h_nav {
   z-index: 100;
   background-color: #0F908A;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   opacity: 0;
   visibility: hidden;
   display: none;
@@ -234,6 +227,9 @@ body header .h_nav .close {
 body header .h_nav .close:hover {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+body header .h_nav .h_navInner {
+  height: 100vh;
 }
 body header .h_nav .h_navInner nav {
   width: 100%;
@@ -327,7 +323,6 @@ body header .m_nav {
   -webkit-overflow-scrolling: touch;
   width: 100%;
   height: 100vh;
-  border: 1px solid red;
   z-index: 1000;
   display: none;
   opacity: 0;

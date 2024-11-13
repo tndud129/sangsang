@@ -88,13 +88,17 @@ langWrap.addEventListener('click', () => {
 });
 
 
+
+
+
 const closeBtn = document.querySelector('.close');
 const hNav = document.querySelector('.h_nav');
 const menuIcon = document.querySelector('.h_menu a'); 
 
+// 초기 상태 설정 (CSS와 동일하게)
 hNav.style.opacity = '0';
 hNav.style.visibility = 'hidden';
-hNav.style.transition = 'opacity 0.6s ease';
+hNav.style.display = 'none';
 
 function toggleScroll(isOpen) {
     if (isOpen) {
@@ -112,28 +116,43 @@ function toggleScroll(isOpen) {
     }
 }
 
+// 메뉴 열기
 menuIcon.addEventListener('click', () => {
-    console.log(menuIcon);
-    hNav.style.display = 'block'; 
-    requestAnimationFrame(() => {
-        hNav.style.opacity = '1'; 
-        hNav.style.visibility = 'visible';
-        toggleScroll(true); 
-    });
+    // 1. 먼저 display block
+    hNav.style.display = 'block';
+    
+    // 2. 강제 리플로우로 transition 활성화
+    hNav.offsetHeight;
+    
+    // 3. opacity와 visibility 변경
+    hNav.style.opacity = '1';
+    hNav.style.visibility = 'visible';
+    
+    // 4. 스크롤 막기
+    toggleScroll(true);
 });
 
+// 메뉴 닫기
 closeBtn.addEventListener('click', () => {
-    hNav.style.opacity = '0'; 
+    // 1. opacity 0으로 페이드 아웃
+    hNav.style.opacity = '0';
+    hNav.style.visibility = 'hidden';
+    
+    // 2. 스크롤 허용
     toggleScroll(false);
-    hNav.addEventListener(
-        'transitionend',
-        () => {
-            hNav.style.visibility = 'hidden';
+    
+    // 3. transition 끝난 후 display none
+    setTimeout(() => {
+        if(hNav.style.opacity === '0') {
             hNav.style.display = 'none';
-        },
-        { once: true }
-    );
+        }
+    }, 600); // transition 시간(0.6s)과 동일하게 설정
 });
+
+
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -243,6 +262,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: false });
 });
 
+
+
+
 // 이징함수 불러오기 맘에 안드시면 다른거 찾아보시는거두....ㅎ
 const easeOutQuart = (x) =>{
     return 1 - Math.pow(1 - x, 4);
@@ -276,7 +298,35 @@ const number = (targetNum, target, duration= 2000) => {
         requestAnimationFrame(update);
 }
 
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+    trigger: ".Stock",
+    start: "top 80%",
+    once: true,
+    onEnter: () => {
+        const stockText = document.querySelector('.StockText h1');
+        number(1619, stockText);
+
+        const rise = document.querySelector('.rise ul li:first-child p:last-child');
+        const risePercent = document.querySelector('.rise ul li:last-child p:last-child');
+        const stockValues = document.querySelectorAll('.StockBox2 ul li span');
+        
+        number(29, rise, 1500);
+        
+        const percentValue = -1.76;
+        number(Math.abs(percentValue), risePercent, 1500);
+        risePercent.textContent = percentValue.toFixed(2) + '%';
+        
+        number(1582, stockValues[0], 1500);
+        number(1648, stockValues[1], 1500);
+        number(1501, stockValues[2], 1500);
+        number(72899, stockValues[3], 1500);
+    }
+});
+
 //함수 실행부분
     const stockText = document.querySelector('.StockText h1');
 
     number(1619, stockText); //duration 없으면 2 초
+

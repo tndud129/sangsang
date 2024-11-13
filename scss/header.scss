@@ -1,6 +1,11 @@
 $mobile: 480px;
 $tablet: 768px;
 $desktop: 1300px;
+$color1:#fff;
+$color2:#999;
+$color3:#0F908A;
+$color4:#00BFB6;
+$color5:#273646;
 
 @mixin desktop{
     @media (max-width: $desktop) {
@@ -20,12 +25,7 @@ $desktop: 1300px;
 
 html{font-size: 10px;}
 body{
-    $color1:#fff;
-    $color2:#999;
-    $color3:#0F908A;
-    $color4:#00BFB6;
-    $color5:#273646;
-    font-family: "NotoSansKR-Regular";
+    font-family: 'Noto Sans KR', sans-serif;
     .nav_bg{width: 100%; background-color: rgba($color: $color1, $alpha: 0.9);
         position: absolute; transition: height 0.3s ease; overflow: hidden;
         height: 0;
@@ -35,10 +35,11 @@ body{
         @include desktop{
             padding: 0 1rem;
         }
-        .h_inner{border: 1px solid red; position: relative; height: 100%;
+        .h_inner{position: relative; height: 100%;
             .h_logo{
-                width: 15em; position: absolute; padding: 1em 0;
-                a{display: block; width: 100%; height: 100%; border: 1px solid red;}
+                position: absolute; 
+                width: 15rem; padding: 1rem 0;
+                a{display: block; width: 100%; height: 100%;}
             }
         
             nav{
@@ -68,7 +69,7 @@ body{
                             top: 100%; left: 0; transition: height 0.3s ease;
                             height: 0; overflow: hidden;
                             z-index: 1000;
-                            ul{height: 100%; border: 1px solid red;
+                            ul{height: 100%;
                                 li{
                                     width: 100%;
                                     a{display: block; font-size: 2em; width: 100%; height: 7rem; line-height: 7rem;
@@ -84,9 +85,8 @@ body{
             .menu_lang{
                 position: absolute; right: 0; top: 0;
                 width: 15rem; height: 100%;
-                border: 1px solid black;
                 .langWrap{
-                    width: 10rem; padding: 2rem 0; border: 1px solid rebeccapurple;
+                    width: 10rem; padding: 2rem 0;
                     ul{flex-direction: column; justify-content: center;
                         align-items: center; height: auto; width: 100%;
                         li{position: relative; width: 100%;
@@ -109,7 +109,7 @@ body{
                     a{
                             width: 2.6rem; height: 2.6rem;
                             background: url(../images/menu.svg) no-repeat;
-                            display: block; margin: 2.8rem auto; border: 1px solid red;
+                            display: block; margin: 2.8rem auto;
                         }
                     }
                 .m_menu{
@@ -118,7 +118,7 @@ body{
                         width: 2.6rem; height: 2.6rem;
                         position: absolute; right: 1rem; top: 0;
                         background: url(../images/menu.svg) no-repeat;
-                        display: none; margin: 2.8rem auto; border: 1px solid red;
+                        display: none; margin: 2.8rem auto;
                         @include desktop {
                             display: block;
                         }
@@ -129,7 +129,7 @@ body{
         .h_nav{
             position: absolute; left: 0; top: 0;
             z-index: 100; background-color: $color3;
-            width: 100%; height: 100%;
+            width: 100%; height: 100vh;
             opacity: 0; visibility: hidden; display: none;
             transition: opacity 0.6s ease;
             @include desktop{
@@ -148,6 +148,7 @@ body{
                 &:hover{transform: rotate(180deg);}
             }
             .h_navInner{
+                height: 100vh;
                 nav{width: 100%; margin: 20rem auto;
                     ul{width: 100%; gap: 4rem;
                         li{
@@ -203,7 +204,7 @@ body{
         .m_nav{
             position: fixed; left: 0; top: 0; background-color: $color1;
             -webkit-overflow-scrolling: touch; 
-            width: 100%; height: 100vh; border: 1px solid red;
+            width: 100%; height: 100vh;
             z-index: 1000; display: none; opacity: 0;
             .fade-in{opacity: 1; transition: opacity 0.3s ease;}
             .fade-out{opacity: 0; transition: opacity 0.3s ease;}

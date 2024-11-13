@@ -62,6 +62,27 @@ mainMenu.addEventListener('mouseleave', () => toggleMenu(false));
 
 
 
+const menuItems = document.querySelectorAll('.h_inner > nav > ul > li');
+const activeColor = '#00BFB6';
+
+menuItems.forEach((item, index) => {
+    const depthMenu = item.querySelector('.depth');
+    const menuLink = item.querySelector('a');
+
+    if(depthMenu) {
+        depthMenu.addEventListener('mouseenter' , () => {
+            menuLink.style.color = activeColor;
+        });
+
+        depthMenu.addEventListener('mouseleave' , () => {
+            menuLink.style.color = '';
+        });
+    }
+});
+
+
+
+
 
 
 

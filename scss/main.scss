@@ -55,7 +55,7 @@ body{
                 }
             }
         }
-        .mainInner{height: 100%;
+        .mainInner{height: 100%; z-index: 10;
             .mainBg{position: absolute; bottom: 0; width: 100%; height: 40rem;
                 border-radius: 200px; overflow: hidden;
                 @include desktop {

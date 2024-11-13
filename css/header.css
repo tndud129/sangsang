@@ -170,6 +170,11 @@ body header .h_inner .menu_lang .h_menu a {
   display: block;
   margin: 2.8rem auto;
 }
+@media (max-width: 1300px) {
+  body header .h_inner .menu_lang .h_menu a {
+    display: none;
+  }
+}
 body header .h_inner .menu_lang .m_menu {
   position: relative;
 }
@@ -192,7 +197,7 @@ body header .h_nav {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 100;
+  z-index: 9999 !important;
   background-color: #0F908A;
   width: 100%;
   height: 100vh;
@@ -230,13 +235,16 @@ body header .h_nav .close:hover {
 }
 body header .h_nav .h_navInner {
   height: 100vh;
+  width: 100%;
 }
 body header .h_nav .h_navInner nav {
   width: 100%;
+  height: 100%;
   margin: 20rem auto;
 }
 body header .h_nav .h_navInner nav ul {
   width: 100%;
+  height: 100%;
   gap: 4rem;
 }
 body header .h_nav .h_navInner nav ul li {
@@ -398,6 +406,7 @@ body header .m_nav .m_navInner ul li .m_navDepth ul {
 body header .m_nav .m_navInner ul li .m_navDepth ul li a {
   display: block;
   height: 5rem;
+  font-weight: 100;
   line-height: 5rem;
   font-size: 2rem;
 }
@@ -407,5 +416,4 @@ body header .m_nav .m_navInner ul li .m_navDepth ul li a::after {
 }
 body header .m_nav .m_navInner ul li .m_navDepth ul li a:hover {
   color: #0F908A;
-  font-weight: 700;
 }/*# sourceMappingURL=header.css.map */

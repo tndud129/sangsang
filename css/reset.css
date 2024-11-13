@@ -12,9 +12,7 @@
 
 *{
     box-sizing: border-box;
-    transform: rotate(0.04deg);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
 }
 
 

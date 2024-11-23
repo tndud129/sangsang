@@ -29,3 +29,34 @@ document.addEventListener('DOMContentLoaded', function() {
         ease: "power2.out"
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const imgTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.S5Img',
+            start: 'top center',
+            end: '+=300',
+            scrub: 1,
+            markers: false
+        }
+    });
+
+    gsap.set('.S5Img', {
+        width: '50%'
+    });
+
+    imgTl.fromTo('.S5Img',
+        {
+            width: '50%'
+        },
+        {
+            width: '100%',
+            duration: 1,
+            ease: 'power2.out'
+        }
+    );
+
+
+});

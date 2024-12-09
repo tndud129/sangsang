@@ -2187,9 +2187,6 @@ body .S5Wrap {
   margin: 10rem 0 20rem;
   padding: 0 1rem;
 }
-body .S5Wrap .S5Inner {
-  border: 1px solid red;
-}
 body .S5Wrap .S5Inner .S5Text {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -2229,8 +2226,7 @@ body .S5Wrap .S5Inner .S5Text h1 {
 }
 body .S5Wrap .S5Inner .S5Text2 div {
   position: relative;
-  height: 37rem;
-  border: 1px solid pink;
+  height: 37rem; /* border: 1px solid pink; */
 }
 body .S5Wrap .S5Inner .S5Text2 div i {
   position: absolute;

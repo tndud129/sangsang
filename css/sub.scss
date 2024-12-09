@@ -665,10 +665,10 @@ body{
                 }
             }
             .S5Text2{
-                div{position: relative; height: 37rem; border: 1px solid pink;
+                div{position: relative; height: 37rem; /* border: 1px solid pink; */
                     i{position: absolute; display: inline-block; width: 10rem; height: 10rem;
                         @include tablet {width: 5rem; height: 5rem;}
-                    } 
+                    }
                     .start{background: url(../images/S5Start.png) no-repeat; left: 10rem; top: 5rem;
                         background-size: 100%;
                         @include desktop {left: 5rem;}

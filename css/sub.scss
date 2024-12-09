@@ -651,7 +651,7 @@ body{
     // sub5영역
     .S5Wrap{margin: 10rem 0 20rem; padding: 0 1rem;
         .S5Inner{
-            border: 1px solid red;
+            // border: 1px solid red;
             .S5Text{flex-wrap: wrap;
                 p{font-size: 3rem; width: 10%;
                     @include desktop {width: 100%;}
